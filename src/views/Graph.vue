@@ -1,17 +1,19 @@
 <template>
   <div id="graph">
-    <h3>Chart</h3>
-    <Chart />
+    <Header/>
+    <Chart/>
   </div>
 </template>
 
 <script>
-import Chart from '@/components/graph/Chart'
+import Chart from '@/components/graph/Chart.vue'
+import Header from '@/components/graph/Header.vue'
 
 export default {
   name: 'graph',
   components:{
-    Chart
+    Chart,
+    Header
   }
 }
 </script>
