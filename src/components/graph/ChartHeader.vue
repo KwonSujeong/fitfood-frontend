@@ -16,8 +16,8 @@
             <v-flex xs12 sm12 md12 xl11 class="center_card" style="margin-top:30px;">
             <v-layout row wrap justify-center>
                 <div>
-                <v-btn class="font-weight-bold green--text" flat style="float:right;">Month</v-btn>
-                <v-btn class="font-weight-bold green--text" flat style="float:right;">Year</v-btn>
+                <v-btn class="font-weight-bold green--text" style="float:right;" router :to="{name: 'yearchart'}">Day</v-btn>
+                <v-btn class="font-weight-bold green--text" style="float:right;" router :to="{name: 'monthchart'}">Month</v-btn>
                 </div>
             </v-layout>
             </v-flex>
@@ -27,7 +27,18 @@
 </template>
 
 <script>
-
+export default{
+    name : 'chart-header',
+    methods : {
+        showMonth(){
+            this.$router.push({name:'monthchart'});
+        },
+        showYear(){
+            this.$router.push({name:'yearchart'});
+        }
+        
+    }
+}
 </script>
 
 <style scoped>

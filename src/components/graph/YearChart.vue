@@ -1,5 +1,6 @@
 <template>
     <div>
+        <chart-header></chart-header>
         <v-container 
         fluid grid-list-lg 
         class="my-1">
@@ -8,19 +9,6 @@
             fill-height 
             wrap class="pa-5"
             >
-            <!-- <v-flex xs12 class="center_card">
-            <v-layout row wrap justify-center>
-            <h2>My nutrition balance</h2>
-            </v-layout>
-            </v-flex>
-            <v-flex xs12 sm12 md12 xl11 class="center_card" style="margin-top:30px;">
-            <v-layout row wrap justify-center>
-                <div>
-                <v-btn class="font-weight-bold green--text" flat style="float:right;" >Month</v-btn>
-                <v-btn class="font-weight-bold green--text" flat style="float:right;">Year</v-btn>
-                </div>
-            </v-layout>
-            </v-flex> -->
             <v-flex>
             <div class="area">
               <LineChart 
@@ -59,11 +47,13 @@
 </template>
 
 <script>
-import LineChart from './Chart.js'
+import LineChart from '@/components/graph/js/YearChart.js'
+import ChartHeader from '@/components/graph/ChartHeader.vue'
 
 export default {
     components:{
-        LineChart
+        LineChart,
+        ChartHeader
     },
     data(){
         return{
@@ -78,16 +68,16 @@ export default {
     methods:{
         fillData(){
             this.datacollection = {
-                labels : [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+                labels : [2018,2019,2020],
                 datasets:[
                     {
                         label:'ayo',
                         backgroundColor:'rgba(255, 0, 0, 0.2)',
-                        borderColor:'lightblue',
-                        pointBackgroundColor:'blue',
+                        borderColor:'lightred',
+                        pointBackgroundColor:'red',
                         borderWidth:1,
-                        pointedBorderColor:'blue',
-                        data: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+                        pointedBorderColor:'red',
+                        data: [300,350,400]
                     }
                 ]
             }

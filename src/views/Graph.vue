@@ -1,19 +1,20 @@
 <template>
   <div id="graph">
-    <Header/>
-    <Chart/>
+    <div>
+    <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
-import Chart from '@/components/graph/Chart.vue'
-import Header from '@/components/graph/Header.vue'
+// import MonthChart from '@/components/graph/MonthChart.vue'
+// import ChartHeader from '@/components/graph/ChartHeader.vue'
 
 export default {
   name: 'graph',
   components:{
-    Chart,
-    Header
+    // ChartHeader,
+    // MonthChart
   }
 }
 </script>

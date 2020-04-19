@@ -4,6 +4,8 @@ import Home from "../views/Home.vue";
 import Graph from "../views/Graph.vue";
 import Recommend from "../views/Recommend.vue";
 import Review from "../views/Review.vue";
+import MonthChart from "../components/graph/MonthChart.vue";
+import YearChart from "../components/graph/YearChart.vue";
 
 Vue.use(VueRouter);
 
@@ -30,7 +32,19 @@ const routes = [{
     {
         path: "/graph",
         name: "graph",
-        component: Graph
+        component: Graph,
+        children: [{
+                path: 'monthchart',
+                name: 'monthchart',
+                component: MonthChart
+            },
+            {
+                path: 'yearchart',
+                name: 'yearchart',
+                component: YearChart
+            }
+        ],
+
     },
     {
         path: "/recommend",
