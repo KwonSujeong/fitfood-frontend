@@ -5,7 +5,8 @@ import Graph from "../views/Graph.vue";
 import Recommend from "../views/Recommend.vue";
 import Review from "../views/Review.vue";
 import MonthChart from "../components/graph/MonthChart.vue";
-import YearChart from "../components/graph/YearChart.vue";
+import DayChart from "../components/graph/DayChart.vue";
+import New from "../views/New.vue";
 
 Vue.use(VueRouter);
 
@@ -39,9 +40,9 @@ const routes = [{
                 component: MonthChart
             },
             {
-                path: 'yearchart',
-                name: 'yearchart',
-                component: YearChart
+                path: 'daychart',
+                name: 'daychart',
+                component: DayChart
             }
         ],
 
@@ -55,6 +56,11 @@ const routes = [{
         path: "/review",
         name: "review",
         component: Review
+    },
+    {
+        path: "/new",
+        name: "new",
+        component: New
     },
 ];
 
